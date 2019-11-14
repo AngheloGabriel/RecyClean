@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:recyclean/src/animation/fade_animation.dart';
-import 'package:recyclean/src/data/database_helper.dart';
 
-class SignUpPage extends StatefulWidget {
-  @override
-  _SignUpPageState createState() => _SignUpPageState();
-}
+class RecoverPage extends StatelessWidget {
 
-class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -24,12 +16,11 @@ class _SignUpPageState extends State<SignUpPage> {
             child: ListView(
               children: <Widget>[
                 Container(
-                  height: 380,
+                  height: 400,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('images/background.png'),
-                          fit: BoxFit.fill
-                          )),
+                          fit: BoxFit.fill)),
                   child: Stack(
                     children: <Widget>[
                       Positioned(
@@ -70,37 +61,24 @@ class _SignUpPageState extends State<SignUpPage> {
                             )),
                       ),
                       Positioned(
-                        // right: 200,
-                        // top: 130,
-                        // width: 170,
-                        // height: 200,
+                        right: 180,
+                        top: 150,
+                        width: 210,
+                        height: 150,
+                        
                         child: FadeAnimation(
                             1.6,
                             Container(
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text(
-                                      "Crear",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 40,
-                                        // fontWeight: FontWeight.bold,
-                                        fontFamily: 'QuickSandBold',
-                                      ),
-                                    ),
-                                    Text(
-                                      "Cuenta",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 40,
-                                        // fontWeight: FontWeight.bold,
-                                        fontFamily: 'QuickSandBold',
-                                      ),
-                                    ),
-                                  ],
+                                child: Text(
+                                  "Recuperar",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    // fontWeight: FontWeight.bold,
+                                    fontFamily: 'QuickSandBold',
+                                  ),
                                 ),
                               ),
                             )),
@@ -134,31 +112,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                           bottom: BorderSide(
                                               color: Colors.grey[100]))),
                                   child: TextFormField(
-                                    controller: nameController,
-                                    decoration: InputDecoration(
-                                        prefixIcon: Icon(
-                                          Icons.perm_identity,
-                                          color: Colors.grey[400],
-                                        ),
-                                        border: InputBorder.none,
-                                        hintText: "Nombre",
-                                        hintStyle:
-                                            TextStyle(color: Colors.grey[400])),
-                                    keyboardType: TextInputType.emailAddress,
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Porfavor Ingrese su Nombre';
-                                      }
-                                    },
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom: BorderSide(
-                                              color: Colors.grey[100]))),
-                                  child: TextFormField(
                                     controller: emailController,
                                     decoration: InputDecoration(
                                         prefixIcon: Icon(
@@ -177,27 +130,6 @@ class _SignUpPageState extends State<SignUpPage> {
                                     },
                                   ),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: TextFormField(
-                                    controller: passwordController,
-                                    decoration: InputDecoration(
-                                        prefixIcon: Icon(
-                                          Icons.lock_open,
-                                          color: Colors.grey[400],
-                                        ),
-                                        border: InputBorder.none,
-                                        hintText: "Ingrese su Contraseña",
-                                        hintStyle:
-                                            TextStyle(color: Colors.grey[400])),
-                                    obscureText: true,
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Porfavor Ingrese su Contraseña';
-                                      }
-                                    },
-                                  ),
-                                )
                               ],
                             ),
                           )),
@@ -222,21 +154,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             height: 50.0,
                             width: 400.0,
                             child: RaisedButton(
-                              onPressed: () {
-                                if (_formKey.currentState.validate()) {
-                                  DBHelper dbHelper = DBHelper();
-                                  dbHelper.saveUser(
-                                    nameController.text,
-                                    emailController.text,
-                                    passwordController.text,
-                                  );
-                                  Navigator.pushReplacementNamed(
-                                      context, '/login');
-                                  Navigator.pop(context);
-                                }
-                              },
+                              onPressed: (){},
                               child: Text(
-                                'CREAR',
+                                'RESTAURAR',
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -248,6 +168,21 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                       ),
+                      // FadeAnimation(
+                      //   2.2,
+                      //   MaterialButton(
+                      //     onPressed: () {
+                      //       Navigator.pushNamed(context, '/signup');
+                      //     },
+                      //     child: Text(
+                      //       'Crear Cuenta',
+                      //       style: TextStyle(
+                      //           color: Color.fromRGBO(143, 148, 251, 1),
+                      //           fontSize: 15,
+                      //           fontFamily: 'QuicksandBold'),
+                      //     ),
+                      //   ),
+                      // ),
                       FadeAnimation(
                         2.2,
                         MaterialButton(
@@ -272,5 +207,6 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+    
   }
 }
