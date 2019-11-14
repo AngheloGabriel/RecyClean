@@ -28,7 +28,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('images/background.png'),
-                          fit: BoxFit.fill)),
+                          fit: BoxFit.fill
+                          )),
                   child: Stack(
                     children: <Widget>[
                       Positioned(
@@ -69,23 +70,37 @@ class _SignUpPageState extends State<SignUpPage> {
                             )),
                       ),
                       Positioned(
-                        right: 200,
-                        top: 130,
-                        width: 170,
-                        height: 200,
+                        // right: 200,
+                        // top: 130,
+                        // width: 170,
+                        // height: 200,
                         child: FadeAnimation(
                             1.6,
                             Container(
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
-                                child: Text(
-                                  "CREAR CUENTA",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 40,
-                                    // fontWeight: FontWeight.bold,
-                                    fontFamily: 'QuickSandBold',
-                                  ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Text(
+                                      "Crear",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 40,
+                                        // fontWeight: FontWeight.bold,
+                                        fontFamily: 'QuickSandBold',
+                                      ),
+                                    ),
+                                    Text(
+                                      "Cuenta",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 40,
+                                        // fontWeight: FontWeight.bold,
+                                        fontFamily: 'QuickSandBold',
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             )),
