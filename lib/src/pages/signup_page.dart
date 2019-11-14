@@ -69,9 +69,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             )),
                       ),
                       Positioned(
-                        right: 230,
+                        right: 200,
                         top: 130,
-                        width: 160,
+                        width: 170,
                         height: 200,
                         child: FadeAnimation(
                             1.6,
@@ -195,7 +195,8 @@ class _SignUpPageState extends State<SignUpPage> {
                             child: Text(
                               "¡Ya tengo una cuenta!",
                               style: TextStyle(
-                                  color: Color.fromRGBO(143, 148, 251, 1)),
+                                fontFamily: 'QuicksandBold',
+                                color: Color.fromRGBO(143, 148, 251, 1)),
                             ),
                           )),
                       FadeAnimation(

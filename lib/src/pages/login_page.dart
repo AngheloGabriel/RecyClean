@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       Positioned(
                         right: 250,
                         top: 180,
-                        width: 120,
+                        width: 130,
                         height: 100,
                         child: FadeAnimation(
                             1.6,
@@ -168,7 +168,8 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                               "Olvidaste tu contraseña?",
                               style: TextStyle(
-                                  color: Color.fromRGBO(143, 148, 251, 1)),
+                                fontFamily: 'QuicksandBold',
+                                color: Color.fromRGBO(143, 148, 251, 1)),
                             ),
                           )),
                       FadeAnimation(
