@@ -5,7 +5,6 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         // backgroundColor: Color.fromARGB(255, 12, 20, 61),
-        
         body: Container(
           // alignment: Alignment.topCenter,
           padding: EdgeInsets.all(40),
