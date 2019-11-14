@@ -70,16 +70,17 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Positioned(
                         right: 250,
-                        top: 180,
+                        top: 220,
                         width: 130,
                         height: 100,
                         child: FadeAnimation(
                             1.6,
                             Container(
                               margin: EdgeInsets.only(top: 50),
-                              child: Center(
+                              // child: Center(
                                 child: Text(
                                   "Iniciar",
+                                
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 40,
@@ -87,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontFamily: 'QuickSandBold',
                                   ),
                                 ),
-                              ),
+                              // ),
                             )),
                       )
                     ],
@@ -179,6 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Container(
+                            
                             height: 50.0,
                             width: 400.0,
                             child: RaisedButton(
