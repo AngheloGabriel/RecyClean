@@ -69,17 +69,17 @@ class _LoginPageState extends State<LoginPage> {
                             )),
                       ),
                       Positioned(
-                        right: 250,
-                        top: 220,
-                        width: 130,
-                        height: 100,
+                        // right: 250,
+                        // top: 220,
+                        // width: 130,
+                        // height: 100,
                         child: FadeAnimation(
                             1.6,
                             Container(
                               margin: EdgeInsets.only(top: 50),
-                              // child: Center(
+                              child: Center(
                                 child: Text(
-                                  "Iniciar",
+                                  "Login",
                                 
                                   style: TextStyle(
                                     color: Colors.white,
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontFamily: 'QuickSandBold',
                                   ),
                                 ),
-                              // ),
+                              ),
                             )),
                       )
                     ],
