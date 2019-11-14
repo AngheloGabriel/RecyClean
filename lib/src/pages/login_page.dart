@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
                                 child: Text(
-                                  "Login",
+                                  "Login  ",
                                 
                                   style: TextStyle(
                                     color: Colors.white,
