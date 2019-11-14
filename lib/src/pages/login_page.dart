@@ -126,13 +126,13 @@ class _LoginPageState extends State<LoginPage> {
                                           color: Colors.grey[400],
                                         ),
                                         border: InputBorder.none,
-                                        hintText: "Ingrese su email",
+                                        hintText: "Correo Electrónico",
                                         hintStyle:
                                             TextStyle(color: Colors.grey[400])),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: (value) {
                                       if (value.isEmpty) {
-                                        return 'Porfavor ingrese su email';
+                                        return 'Porfavor Ingrese su Correo Electrónico';
                                       }
                                     },
                                   ),
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                                     obscureText: true,
                                     validator: (value) {
                                       if (value.isEmpty) {
-                                        return 'Porfavor ingrese su contraseña';
+                                        return 'Porfavor Ingrese su Contraseña';
                                       }
                                     },
                                   ),
@@ -217,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'OMITIR',
                             style: TextStyle(
-                                color: Colors.pink,
+                                color: Colors.pinkAccent,
                                 fontSize: 15,
                                 fontFamily: 'QuicksandBold'),
                           ),
