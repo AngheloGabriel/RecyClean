@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:recyclean/src/animation/fade_animation.dart';
-import 'package:recyclean/src/model/user_model.dart';
-import 'package:recyclean/src/data/database_helper.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
+class RecoverPage extends StatelessWidget {
 
-class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -69,17 +61,18 @@ class _LoginPageState extends State<LoginPage> {
                             )),
                       ),
                       Positioned(
-                        right: 250,
-                        top: 180,
-                        width: 130,
-                        height: 100,
+                        right: 180,
+                        top: 150,
+                        width: 210,
+                        height: 150,
+                        
                         child: FadeAnimation(
                             1.6,
                             Container(
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
                                 child: Text(
-                                  "Iniciar",
+                                  "Recuperar",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 40,
@@ -137,27 +130,6 @@ class _LoginPageState extends State<LoginPage> {
                                     },
                                   ),
                                 ),
-                                Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: TextFormField(
-                                    controller: passwordController,
-                                    decoration: InputDecoration(
-                                        prefixIcon: Icon(
-                                          Icons.lock,
-                                          color: Colors.grey[400],
-                                        ),
-                                        border: InputBorder.none,
-                                        hintText: "Ingrese su contraseña",
-                                        hintStyle:
-                                            TextStyle(color: Colors.grey[400])),
-                                    obscureText: true,
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Porfavor Ingrese su Contraseña';
-                                      }
-                                    },
-                                  ),
-                                )
                               ],
                             ),
                           )),
@@ -165,10 +137,10 @@ class _LoginPageState extends State<LoginPage> {
                           2,
                           MaterialButton(
                             onPressed: () {
-                               Navigator.pushNamed(context, '/recover');
+                              Navigator.pushNamed(context, '/login');
                             },
                             child: Text(
-                              "Olvidaste tu contraseña?",
+                              "¡Ya tengo una cuenta!",
                               style: TextStyle(
                                 fontFamily: 'QuicksandBold',
                                 color: Color.fromRGBO(143, 148, 251, 1)),
@@ -182,9 +154,9 @@ class _LoginPageState extends State<LoginPage> {
                             height: 50.0,
                             width: 400.0,
                             child: RaisedButton(
-                              onPressed: _authenticateUser,
+                              onPressed: (){},
                               child: Text(
-                                'INGRESAR',
+                                'RESTAURAR',
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -196,21 +168,21 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      FadeAnimation(
-                        2.2,
-                        MaterialButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/signup');
-                          },
-                          child: Text(
-                            'Crear Cuenta',
-                            style: TextStyle(
-                                color: Color.fromRGBO(143, 148, 251, 1),
-                                fontSize: 15,
-                                fontFamily: 'QuicksandBold'),
-                          ),
-                        ),
-                      ),
+                      // FadeAnimation(
+                      //   2.2,
+                      //   MaterialButton(
+                      //     onPressed: () {
+                      //       Navigator.pushNamed(context, '/signup');
+                      //     },
+                      //     child: Text(
+                      //       'Crear Cuenta',
+                      //       style: TextStyle(
+                      //           color: Color.fromRGBO(143, 148, 251, 1),
+                      //           fontSize: 15,
+                      //           fontFamily: 'QuicksandBold'),
+                      //     ),
+                      //   ),
+                      // ),
                       FadeAnimation(
                         2.2,
                         MaterialButton(
@@ -235,21 +207,6 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  _authenticateUser() async {
-    if (_formKey.currentState.validate()) {
-      DBHelper dbHelper = DBHelper();
-      dbHelper
-          .getUser(emailController.text, passwordController.text)
-          .then((List<User> users) {
-        if (users != null && users.length > 0) {
-          Navigator.pushNamed(context, '/home');
-          print('[LoginPage] _authenticateUser: Success');
-        } else {
-          print('[LoginPage] _authenticateUser: Invalid credentials');
-        }
-      });
-    }
+    
   }
 }
