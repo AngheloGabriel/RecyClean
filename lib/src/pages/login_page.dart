@@ -16,18 +16,11 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-        backgroundColor: Colors.blueAccent,
-        body: SafeArea(
-          child: Form(
-            key: _formKey,
-=======
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Form(
           key: _formKey,
           child: Container(
->>>>>>> dev
             child: ListView(
               children: <Widget>[
                 Container(
@@ -87,7 +80,6 @@ class _LoginPageState extends State<LoginPage> {
                               child: Center(
                                 child: Text(
                                   "Login  ",
-                                
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 40,
@@ -173,13 +165,13 @@ class _LoginPageState extends State<LoginPage> {
                           2,
                           MaterialButton(
                             onPressed: () {
-                               Navigator.pushNamed(context, '/recover');
+                              Navigator.pushNamed(context, '/recover');
                             },
                             child: Text(
                               "Olvidaste tu contraseña?",
                               style: TextStyle(
-                                fontFamily: 'QuicksandBold',
-                                color: Color.fromRGBO(143, 148, 251, 1)),
+                                  fontFamily: 'QuicksandBold',
+                                  color: Color.fromRGBO(143, 148, 251, 1)),
                             ),
                           )),
                       FadeAnimation(
@@ -187,7 +179,6 @@ class _LoginPageState extends State<LoginPage> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Container(
-                            
                             height: 50.0,
                             width: 400.0,
                             child: RaisedButton(
